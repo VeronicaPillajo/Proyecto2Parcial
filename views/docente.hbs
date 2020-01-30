@@ -1,0 +1,107 @@
+{{> header }}
+
+{{> navbar }}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Modulo para Docente:</strong> En esta sección se puede ingresar los temas propuestos por los docentes
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<!-- Button trigger modal -->
+
+<button class="btn btn-lg float-right" style="background-color:transparent;" data-toggle="modal"
+    data-target="#exampleModal">
+    <i class="fa fa-question-circle"></i> Ayuda
+</button>
+<div class="container">
+    <blockquote class="blockquote text-center">
+        <h2>Ingreso de Tema:</h2>
+    </blockquote>
+    <div class="row justify-content-center">
+        <div class="col-sm-6">
+            <form method="POST" action="/addtema">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Docente:</label>
+                    <select id="inputState" name="idusuario" class="form-control">
+                        {{#idusuario}}
+                        <option name="idusuario" selected> {{idusuario}}.- {{nombre}} </option>
+                        {{/idusuario}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Número de Estudiantes:</label>
+                    <select class="custom-select" name="numest" required>
+                        <option selected disabled>Choose...</option>
+                        <option name="numest" value="1">1</option>
+                        <option name="numest" value="2">2</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Ingrese Tema:</label>
+                    <input type="text" class="form-control" name="nombretema" required>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Área:</label>
+                    <select class="custom-select" name="area" required>
+                        <option selected disabled>Choose...</option>
+                        <option name="area" value="BASE DE DATOS">BASE DE DATOS</option>
+                        <option name="area" value="REDES">REDES</option>
+                        <option name="area" value="SOFTWARE">SOFTWARE</option>
+                        <option name="area" value="MACHINE LEARNING">MACHINE LEARNING</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Opción Titúlación:</label>
+                    <select class="custom-select" name="tipo_tema" required>
+                        <option selected disabled>Choose...</option>
+                        <option name="tipo_tema" value="Artículo">Artículo</option>
+                        <option name="tipo_tema" value="Proyecto">Proyecto</option>
+                    </select>
+                </div>
+                <div class="row justify-content-center">
+                    <div>
+                        <button class="btn btn-primary" type="submit">Registrar Tema</button>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Procéso de Ingreso de Tema</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Pasos:
+                <ul>
+                    <li>1.-Seleccionar un Docente</li>
+                    <li>2.-Seleccionar el numero de Estudiantes pertenecientes al grupo</li>
+                    <li>3.-Ingresar el Titulo del tema propuesto</li>
+                    <li>4.-Seleccionar el Area Correspondiente al tema propuesto</li>
+                    <li>5.-Seleccionar el tipo de Titulacion(Artículo o Proyecto)</li>
+                    <li>6.-Dar click en el boton de Registrar Tema</li>
+
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{> footer }}

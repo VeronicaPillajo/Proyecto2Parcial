@@ -1,0 +1,79 @@
+{{> header }}
+
+{{> navbar }}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Modulo asignado para el docente revisor:</strong> A continuacion se seleccionara el tema que ha sido
+    asignado
+    y se podran registrar observaciones
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+
+<!-- Button trigger modal -->
+
+<button class="btn btn-lg float-right" style="background-color:transparent;" data-toggle="modal"
+    data-target="#exampleModal">
+    <i class="fa fa-question-circle"></i> Ayuda
+</button>
+
+<div class="container ">
+    <blockquote class="blockquote text-center">
+        <h2>Registro de Observaciones </h2>
+    </blockquote>
+    <div class="row justify-content-center">
+        <div class="col-sm-10">
+            <form method="POST" action="/addob">
+
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Tema:</label>
+                    <select class="custom-select" name="idtemar" required>
+                        {{#nametema}}
+                        <option name="idtemar">{{idtemar}}.-{{nombretema}}</option>
+                        {{/nametema}}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect2">Observaciones</label>
+                    <i class="fas fa-pencil-alt prefix"></i>
+                    <textarea id="form10" name="descripcion" class="md-textarea form-control" rows="3"></textarea>
+                </div>
+                <div class="row justify-content-center">
+                    <div>
+                        <button class="btn btn-primary" type="submit">Registrar Observaciones</button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Procéso de Ingreso de Tema</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Pasos:
+                <ul>
+                    <li>1.-Seleccionar el tema asignado</li>
+                    <li>2.-Ingresar Observaciones si existiera alguna</li>
+                    <li>3.-Dar click en el boton de Registrar Observación</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{> footer }}

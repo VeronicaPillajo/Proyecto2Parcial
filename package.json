@@ -1,0 +1,25 @@
+{
+    "name": "06-webserver",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start": "node server.js",
+        "nodemon": "nodemon server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "csv-writer": "^1.6.0",
+        "express": "^4.17.1",
+        "express-promise-router": "^3.0.3",
+        "hbs": "^4.0.6",
+        "json2csv": "^4.5.4",
+        "nodemon": "^2.0.2",
+        "pg": "^7.17.0",
+        "postgresql-easy": "^1.2.5",
+        "python-shell": "^1.0.8"
+    }
+}

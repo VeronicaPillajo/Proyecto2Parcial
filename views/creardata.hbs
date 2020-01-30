@@ -1,0 +1,90 @@
+{{> header }}
+
+{{> navbar }}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Modulo para ver temas Aprobados:</strong> En esta seccion se puede crear un dataset con los temas aprobados
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<!-- Button trigger modal -->
+
+
+<div class="container">
+    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+        <table class="table table-bordered table-striped mb-0">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">id </th>
+                <th scope="col">Titulo</th>
+                <th scope="col">Area</th>
+                <th scope="col">Tipo Tema</th>
+                <th scope="col">Estado</th>
+            </tr>
+            </thead>
+            <tbody>
+                {{#data}}
+                <tr>
+                    <th scope="row">{{idestado}}</th>
+                    <td>{{nombretema}}</td>
+                    <td>{{area}}</td>
+                    <td>{{tipo_tema}}</td>
+                    <td>{{tipoestado}}</td>
+                </tr>
+                {{/data}}
+            </tbody>
+        </table>
+    </div>
+    <button class="btn btn-lg float-right" style="background-color:transparent;" data-toggle="modal"
+        data-target="#exampleModal">
+        <i class="fa fa-question-circle"></i> Ayuda
+    </button>
+    <div class="container">
+        <blockquote class="blockquote text-center">
+            <h2>DATASET Temas.csv:</h2>
+        </blockquote>
+        <div class="row justify-content-center">
+            <div class="col-sm-6">
+                <form method="POST" action="/crearcsv">
+                    <label for="formGroupExampleInput">Exportar a Csv:</label>
+
+                    <div class="row justify-content-center">
+                        <div>
+                            <button class="btn btn-primary" type="submit">Crear CSV</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Procéso de Creación de Dataset</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Pasos:
+                    <ul>
+                        <li>1.-Observar los temas Aprobados</li>
+                        <li>2.-Dar click en Crear Dataset </li>
+                        <li>3.-Buscar el Archivo en la carpeta del proyecto con el nombre Temas.csv</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{> footer }}

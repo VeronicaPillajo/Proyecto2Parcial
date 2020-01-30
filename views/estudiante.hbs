@@ -1,0 +1,54 @@
+{{> header }}
+
+{{> navbar }}
+
+<div class="container">
+    <blockquote class="blockquote text-center">
+        <h2>Registro de Tema</h2>
+    </blockquote>
+    <div class="row justify-content-center">
+        
+        <div class="col-sm-6">
+            <form>
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Ingrese Tema:</label>
+                    <input type="text" class="form-control" id="formGroupExampleInput" required>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Detalle:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationCustom03">Opcion de Titulación:</label>
+                    <select class="custom-select" id="validationTooltip04" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>Proyecto Técnico</option>
+                        <option>Articulo Académico</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor seleccione una
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="validationCustom03">Número de Integrantes:</label>
+                    <select class="custom-select" id="validationTooltip04" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option>1</option>
+                        <option>2</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Por favor seleccione una
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div>
+                        <button class="btn btn-primary" type="submit">Registrar Tema</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{> footer }}

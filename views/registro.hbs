@@ -1,0 +1,131 @@
+{{> header }}
+
+{{> navbar }}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Inscripción a nuestra plataforma:</strong> A continuación debes rellenar la información para completar tu
+    registro
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<!-- Button trigger modal -->
+
+<button class="btn btn-lg float-right" style="background-color:transparent;" data-toggle="modal"
+    data-target="#exampleModal">
+    <i class="fa fa-question-circle"></i> Ayuda
+</button>
+
+<div class="container justify-content-center ">
+    <form method="POST" action="/addusuario" class="needs-validation" novalidate>
+        <div class="form-row">
+
+            <div class="col-md-4 mb-3">
+                <label for="validationCustom01">Nombres:</label>
+                <input type="text" class="form-control" name="nombre" placeholder="Roberto Carlos" required>
+                <div class="valid-feedback">
+                    Correcto
+                </div>
+                <div class="invalid-feedback">
+                    Ingrese sus Nombres completos
+                </div>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationCustom03">Direccion:</label>
+                <input type="text" class="form-control" name="direccion" required>
+                <div class="invalid-feedback">
+                    Por favor ingrese una ciudad direccion valida
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <label for="validationCustom03">Estado Academico:</label>
+                <select id="inputState" name="estadoacademico" class="form-control">
+                    <option selected>choose..</option>
+                    <option>Cursando</option>
+                    <option>Egresado</option>
+                </select>
+
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Estudios terminados o Cursando</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="invalid-feedback">
+                    Por favor ingrese correctamente su estado academico
+                </div>
+            </div>
+            <div class="col-md-2 mb-3">
+                <label for="validationCustom03">Periodo:</label>
+                <select id="inputState" name="periodo" class="form-control">
+                    <option selected>choose..</option>
+                    <option>52</option>
+                    <option>53</option>
+                    <option>54</option>
+                    <option>55</option>
+                </select>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>55</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="invalid-feedback">
+                    Por favor ingrese correctamente el periodo
+                </div>
+            </div>
+        </div>
+        {{!-- <div class="form-row">
+
+
+            <div class="col-md-4 mb-3">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="form-control" name="correo" placeholder="name@example.com" required>
+
+                <div class="invalid-feedback">
+                    Ingrese correcamente su correo electronico
+                </div>
+            </div>
+
+        </div> --}}
+
+        <button class="btn btn-primary" type="submit">Inscribirse</button>
+    </form>
+
+</div>
+</br>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Procéso de Inscripción</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Pasos:
+                <ul>
+                    <li>1.-Ingresar el nombre del estudiante</li>
+                    <li>2.-Ingresar dirección</li>
+                    <li>3.-Ingresar Estado Académico(Cursando Estudios o Egresado)</li>
+                    <li>4.-Ingresar el Periodo en el que se encuentra actualmente</li>
+                    <li>5.-Dar click en el boton de Inscripción</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+{{> footer }}

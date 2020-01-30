@@ -1,0 +1,41 @@
+body {
+    padding-bottom: 70px;
+}
+
+footer {
+    background-color: #000000;
+    color: white;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+    padding: 10px;
+}
+
+.navbar {
+    height: 80px;
+}
+
+#bg {
+    position: fixed;
+    top: 0;
+    left: 20;
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+select,
+option {
+    width: 10px;
+}
